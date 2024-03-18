@@ -614,7 +614,7 @@ open class BaseNotificationBanner: UIView {
     }
 
     /**
-     Removes the NotificationBanner from the queue if not displaying
+      Removes the NotificationBanner from the queue if not displaying
      */
     public func remove() {
 
