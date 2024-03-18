@@ -398,12 +398,12 @@ open class BaseNotificationBanner: UIView {
             if let parentViewController = parentViewController, parentViewController.view != nil {
                 parentViewController.view.addSubview(self)
                 if statusBarShouldBeShown() {
-                    appWindow?.windowLevel = UIWindow.Level.normal
+                    //appWindow?.windowLevel = UIWindow.Level.normal
                 }
             } else {
                 appWindow?.addSubview(self)
                 if statusBarShouldBeShown() && !(parentViewController == nil && bannerPosition == .top) {
-                    appWindow?.windowLevel = UIWindow.Level.normal
+                    //appWindow?.windowLevel = UIWindow.Level.normal
                 } else {
                     appWindow?.windowLevel = UIWindow.Level.statusBar + 1
                 }
@@ -606,10 +606,10 @@ open class BaseNotificationBanner: UIView {
             self.delegate?.notificationBannerDidDisappear(self)
 
             self.bannerQueue.showNext(callback: { (isEmpty) in
-                if isEmpty || self.statusBarShouldBeShown() {
-                    self.appWindow?.windowLevel = UIWindow.Level.normal
-                }
-            })
+                 if isEmpty || self.statusBarShouldBeShown() {
+                     //self.appWindow?.windowLevel = UIWindow.Level.normal
+                 }
+             })
         }
     }
 
